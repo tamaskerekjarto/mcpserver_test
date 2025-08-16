@@ -1,6 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("server")
+mcp = FastMCP("server", port=80)
 
 @mcp.tool()
 def greeting(name: str) -> str:
@@ -8,4 +8,4 @@ def greeting(name: str) -> str:
     return f"Hi {name}"
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http", port=80)
+    mcp.run(transport="streamable-http")
